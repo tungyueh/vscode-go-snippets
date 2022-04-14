@@ -3,44 +3,44 @@ VS Code Go extension predefined snippets for quick coding
 
 `im`: Snippet for import statement
 ```go
-import "${1:package}"
+import "package"
 ```
 
 `ims`: Snippet for a import block
 ```go
 import (
-	"${1:package}"
+	"package"
 )
 ```
 
 `co`: Snippet for a constant
 ```go
-const ${1:name} = ${2:value}
+const name = value
 ```
 
 `cos`: Snippet for a constant block
 ```go
 const (
-	${1:name} = ${2:value}
+	name = value
 )
 ```
 
 `tyf`: Snippet for a type function declaration
 ```go
-type ${1:name} func($3) $4
+type name func() 
 ```
 
 `tyi`: Snippet for a type interface
 ```go
-type ${1:name} interface {
-	$0
+type name interface {
+	
 }
 ```
 
 `tys`: Snippet for a struct declaration
 ```go
-type ${1:name} struct {
-	$0
+type name struct {
+	
 }
 ```
 
@@ -49,65 +49,65 @@ type ${1:name} struct {
 package main
 
 func main() {
-	$0
+	
 }
 ```
 
 `func`: Snippet for function declaration
 ```go
-func $1($2) $3 {
-	$0
+func ()  {
+	
 }
 ```
 
 `var`: Snippet for a variable
 ```go
-var ${1:name} ${2:type}
+var name type
 ```
 
 `switch`: Snippet for switch statement
 ```go
-switch ${1:expression} {
-case ${2:condition}:
-	$0
+switch expression {
+case condition:
+	
 }
 ```
 
 `sel`: Snippet for select statement
 ```go
 select {
-case ${1:condition}:
-	$0
+case condition:
+	
 }
 ```
 
 `cs`: Snippet for case clause
 ```go
-case ${1:condition}:$0
+case condition:
 ```
 
 `for`: Snippet for a for loop
 ```go
-for ${1:i} := ${2:0}; $1 < ${3:count}; $1${4:++} {
-	$0
+for i := 0; i < count; i++ {
+	
 }
 ```
 
 `forr`: Snippet for a for range loop
 ```go
-for ${1:_, }${2:v} := range ${3:v} {
-	$0
+for _, v := range v {
+	
 }
 ```
 
 `ch`: Snippet for a channel
 ```go
-chan ${1:type}
+chan type
 ```
 
 `map`: Snippet for a map
 ```go
-map[${1:type}]${2:type}
+map[type]type
 ```
 
 `in`: Snippet for empty interface
@@ -117,154 +117,154 @@ interface{}
 
 `if`: Snippet for if statement
 ```go
-if ${1:condition} {
-	$0
+if condition {
+	
 }
 ```
 
 `el`: Snippet for else branch
 ```go
 else {
-	$0
+	
 }
 ```
 
 `ie`: Snippet for if else
 ```go
-if ${1:condition} {
-	$2
+if condition {
+	
 } else {
-	$0
+	
 }
 ```
 
 `iferr`: Snippet for if err != nil
 ```go
 if err != nil {
-	${1:return ${2:nil, }${3:err}}
+	return nil, err
 }
 ```
 
 `fp`: Snippet for fmt.Println()
 ```go
-fmt.Println("$1")
+fmt.Println("")
 ```
 
 `ff`: Snippet for fmt.Printf()
 ```go
-fmt.Printf("$1", ${2:var})
+fmt.Printf("", var)
 ```
 
 `lp`: Snippet for log.Println()
 ```go
-log.Println("$1")
+log.Println("")
 ```
 
 `lf`: Snippet for log.Printf()
 ```go
-log.Printf("$1", ${2:var})
+log.Printf("", var)
 ```
 
 `lv`: Snippet for log.Printf() with variable content
 ```go
-log.Printf("${1:var}: %#+v\\n", ${1:var})
+log.Printf("var: %#+v\\n", var)
 ```
 
 `tl`: Snippet for t.Log()
 ```go
-t.Log("$1")
+t.Log("")
 ```
 
 `tlf`: Snippet for t.Logf()
 ```go
-t.Logf("$1", ${2:var})
+t.Logf("", var)
 ```
 
 `tlv`: Snippet for t.Logf() with variable content
 ```go
-t.Logf("${1:var}: %#+v\\n", ${1:var})
+t.Logf("var: %#+v\\n", var)
 ```
 
 `make`: Snippet for make statement
 ```go
-make(${1:type}, ${2:0})
+make(type, 0)
 ```
 
 `new`: Snippet for new statement
 ```go
-new(${1:type})
+new(type)
 ```
 
 `pn`: Snippet for panic
 ```go
-panic("$0")
+panic("")
 ```
 
 `wr`: Snippet for http Response
 ```go
-${1:w} http.ResponseWriter, ${2:r} *http.Request
+w http.ResponseWriter, r *http.Request
 ```
 
 `hf`: Snippet for http.HandleFunc()
 ```go
-${1:http}.HandleFunc("${2:/}", ${3:handler})
+http.HandleFunc("/", handler)
 ```
 
 `hand`: Snippet for http handler declaration
 ```go
-func $1(${2:w} http.ResponseWriter, ${3:r} *http.Request) {
-	$0
+func (w http.ResponseWriter, r *http.Request) {
+	
 }
 ```
 
 `rd`: Snippet for http.Redirect()
 ```go
-http.Redirect(${1:w}, ${2:r}, "${3:/}", ${4:http.StatusFound})
+http.Redirect(w, r, "/", http.StatusFound)
 ```
 
 `herr`: Snippet for http.Error()
 ```go
-http.Error(${1:w}, ${2:err}.Error(), ${3:http.StatusInternalServerError})
+http.Error(w, err.Error(), http.StatusInternalServerError)
 ```
 
 `las`: Snippet for http.ListenAndServe
 ```go
-http.ListenAndServe("${1::8080}", ${2:nil})
+http.ListenAndServe(":8080", nil)
 ```
 
 `sv`: Snippet for http.Serve
 ```go
-http.Serve("${1::8080}", ${2:nil})
+http.Serve(":8080", nil)
 ```
 
 `go`: Snippet for anonymous goroutine declaration
 ```go
-go func($1) {
-	$0
-}($2)
+go func() {
+	
+}()
 ```
 
 `gf`: Snippet for goroutine declaration
 ```go
-go ${1:func}($0)
+go func()
 ```
 
 `df`: Snippet for defer statement
 ```go
-defer ${1:func}($0)
+defer func()
 ```
 
 `tf`: Snippet for Test function
 ```go
-func Test$1(t *testing.T) {
-	$0
+func Test(t *testing.T) {
+	
 }
 ```
 
 `tm`: Snippet for TestMain function
 ```go
 func TestMain(m *testing.M) {
-	$1
+	
 
 	os.Exit(m.Run())
 }
@@ -272,37 +272,37 @@ func TestMain(m *testing.M) {
 
 `bf`: Snippet for Benchmark function
 ```go
-func Benchmark$1(b *testing.B) {
-	for ${2:i} := 0; ${2:i} < b.N; ${2:i}++ {
-		$0
+func Benchmark(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		
 	}
 }
 ```
 
 `ef`: Snippet for Example function
 ```go
-func Example$1() {
-	$2
+func Example() {
+	
 	//Output:
-	$3
+	
 }
 ```
 
 `tdt`: Snippet for table driven test
 ```go
-func Test$1(t *testing.T) {
+func Test(t *testing.T) {
 	testCases := []struct {
 		desc	string
-		$2
+		
 	}{
 		{
-			desc: "$3",
-			$4
+			desc: "",
+			
 		},
 	}
 	for _, tC := range testCases {
 		t.Run(tC.desc, func(t *testing.T) {
-			$0
+			
 		})
 	}
 }
@@ -311,21 +311,21 @@ func Test$1(t *testing.T) {
 `finit`: Snippet for init function
 ```go
 func init() {
-	$1
+	
 }
 ```
 
 `fmain`: Snippet for main function
 ```go
 func main() {
-	$1
+	
 }
 ```
 
 `meth`: Snippet for method declaration
 ```go
-func (${1:receiver} ${2:type}) ${3:method}($4) $5 {
-	$0
+func (receiver type) method()  {
+	
 }
 ```
 
@@ -351,9 +351,9 @@ func main() {
 
 `sort`: Snippet for a custom sort.Sort interface implementation, for a given slice type.
 ```go
-type ${1:SortBy} []${2:Type}
+type SortBy []Type
 
-func (a $1) Len() int           { return len(a) }
-func (a $1) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-func (a $1) Less(i, j int) bool { ${3:return a[i] < a[j]} }
+func (a SortBy) Len() int           { return len(a) }
+func (a SortBy) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a SortBy) Less(i, j int) bool { return a[i] < a[j] }
 ```
