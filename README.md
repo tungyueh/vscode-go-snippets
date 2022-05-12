@@ -1,6 +1,8 @@
 # vscode-go-snippets
 VS Code Go extension predefined snippets for quick coding
 
+Make https://github.com/golang/vscode-go/blob/master/snippets/go.json more readable
+
 `im`: Snippet for import statement
 ```go
 import "package"
